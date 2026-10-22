@@ -84,9 +84,9 @@ const Menu: React.FC = () => {
         <IonList id='inbox-list'>
           <IonListHeader>Inbox</IonListHeader>
           <IonNote>hi@ionicframework.com</IonNote>
-          {appPages.map((appPage, index) => {
+          {appPages.map((appPage) => {
             return (
-              <IonMenuToggle key={index} autoHide={false}>
+              <IonMenuToggle key={appPage.url} autoHide={false}>
                 <IonItem
                   className={location.pathname === appPage.url ? 'selected' : ''}
                   routerLink={appPage.url}
@@ -104,8 +104,8 @@ const Menu: React.FC = () => {
 
         <IonList id='labels-list'>
           <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines='none' key={index}>
+          {labels.map((label) => (
+            <IonItem lines='none' key={label}>
               <IonIcon aria-hidden='true' slot='start' icon={bookmarkOutline} />
               <IonLabel>{label}</IonLabel>
             </IonItem>
